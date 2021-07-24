@@ -1,4 +1,4 @@
-используем язык java. Travis CI поддерживает другие языки тоже.
+# используем язык java. Travis CI поддерживает другие языки тоже.
 language: java
 jdk:
   - openjdk14
@@ -11,10 +11,10 @@ sudo: false
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
-# Отправлять уведомление на почту info@sampx.ru (Изменить на свою) если сборка упала
+# Отправлять уведомление на почту youremail@smtp.ru (Изменить на свою) если сборка упала
 notifications:
   email:
     recipients:
-      - info@sampx.ru
+      - kiron19951995@gmail.com
     on_success: never # default: change
     on_failure: always # default: always
