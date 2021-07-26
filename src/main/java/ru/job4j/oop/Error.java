@@ -8,7 +8,6 @@ public class Error {
     public Error() {
     }
 
-
     public Error(int status, boolean active, String message) {
         this.status = status;
         this.active = active;
@@ -28,10 +27,6 @@ public class Error {
 
     @Override
     public String toString() {
-        return "Error{" +
-                "status=" + status +
-                ", active=" + active +
-                ", message='" + message + '\'' +
-                '}';
+        return "status=" + status + " " + active + ", message " + message;
     }
 }
