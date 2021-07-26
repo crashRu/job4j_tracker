@@ -15,15 +15,6 @@ public class Error {
         this.message = message;
     }
 
-    @Override
-    public String toString() {
-        return "Error{" +
-                "status=" + status +
-                ", active=" + active +
-                ", message='" + message + '\'' +
-                '}';
-    }
-
     public static void main(String[] args) {
         Error error = new Error(5, true, "Мы все умрем))");
         Error error1 = new Error();
@@ -33,5 +24,14 @@ public class Error {
         System.out.println(error1);
         System.out.println(error2);
 
+    }
+
+    @Override
+    public String toString() {
+        return "Error{" +
+                "status=" + status +
+                ", active=" + active +
+                ", message='" + message + '\'' +
+                '}';
     }
 }
