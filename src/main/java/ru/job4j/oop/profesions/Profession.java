@@ -1,14 +1,19 @@
 package ru.job4j.oop.profesions;
 
-import java.util.Date;
-
 public class Profession {
     private long id;
     private String name;
     private String suName;
     private String education;
     private int age;
-    private Date birthday;
+
+    public Profession(long id, String name, String suName, String education, int age) {
+        this.id = id;
+        this.name = name;
+        this.suName = suName;
+        this.education = education;
+        this.age = age;
+    }
 
     public long getId() {
         return id;
@@ -28,9 +33,5 @@ public class Profession {
 
     public int getAge() {
         return age;
-    }
-
-    public Date getBirthday() {
-        return birthday;
     }
 }
