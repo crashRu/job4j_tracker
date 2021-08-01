@@ -4,7 +4,7 @@ public class Engineer extends Profession {
     private int seniority;
 
     public Engineer(long id, String name, String suName, String education, int age, int seniority) {
-        super(id, name, suName, education, age);
+        super(id, name, education, age);
         this.seniority = seniority;
     }
 
