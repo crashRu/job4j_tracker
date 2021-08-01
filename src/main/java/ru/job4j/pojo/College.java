@@ -10,5 +10,6 @@ public class College {
         vladislav.setMiddleName("Ибрагимович");
         vladislav.setGroup("Хирургия");
         vladislav.setDateAdmission(new Date(2020, 9, 10));
+        System.out.println(vladislav);
     }
 }
