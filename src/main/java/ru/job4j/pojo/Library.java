@@ -19,7 +19,7 @@ public class Library {
                     + "Количество страниц: " + book.getPageSize());
         }
         for (Book book : books) {
-            if (book.getName().equalsIgnoreCase("Clean code")) {
+            if ("Clean code".equalsIgnoreCase(book.getName())) {
                 System.out.println(book.getName() + "  " + book.getPageSize());
             }
         }
