@@ -4,9 +4,9 @@ public class Dentist extends Doctor {
 
     private long price;
 
-    public Dentist(long id, String name, String education,
-                   int age, String specialization) {
-        super(id, name, education, age, specialization);
+    public Dentist(long id, String name, int age, int price) {
+        super(id, name, age);
+        this.price = price;
     }
 
     public void vomitedTooth(Pacient pacient) {

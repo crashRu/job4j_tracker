@@ -2,10 +2,11 @@ package ru.job4j.oop.profesions;
 
 public class Builder extends Engineer {
 
-    private int seniority;
+    private String specialization;
 
-    public Builder(long id, String name, String suName, String education, int age, int seniority) {
-        super(id, name, suName, education, age, seniority);
+    public Builder(long id, String name, int age, int seniority, String specialization) {
+        super(id, name, age, seniority);
+        this.specialization = specialization;
     }
 
     public void build(Project project) {

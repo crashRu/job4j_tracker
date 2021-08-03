@@ -4,8 +4,9 @@ public class Surgeon extends Doctor {
 
     private int price;
 
-    public Surgeon(long id, String name, String education, int age, String specialization) {
-        super(id, name, education, age, specialization);
+    public Surgeon(long id, String name, int age, int price) {
+        super(id, name, age);
+        this.price = price;
     }
 
     public void operation(Pacient pacient, Diagnosis diagnosis) {

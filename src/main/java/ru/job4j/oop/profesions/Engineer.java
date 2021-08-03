@@ -3,8 +3,8 @@ package ru.job4j.oop.profesions;
 public class Engineer extends Profession {
     private int seniority;
 
-    public Engineer(long id, String name, String suName, String education, int age, int seniority) {
-        super(id, name, education, age);
+    public Engineer(long id, String name, int age, int seniority) {
+        super(id, name, age);
         this.seniority = seniority;
     }
 
