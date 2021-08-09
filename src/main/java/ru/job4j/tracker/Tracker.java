@@ -25,21 +25,27 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
-        Item item1 = findById(id);
-        int idReplace = item1.getId();
-        int indexReplace = indexOf(idReplace);
-        items[indexReplace] = item;
-        items[indexReplace].setId(idReplace);
-        return items[indexReplace].getId() == item.getId() ? true : false;
+        if (indexOf(id) != -1) {
+            Item item1 = findById(id);
+            int idReplace = item1.getId();
+            int indexReplace = indexOf(idReplace);
+            items[indexReplace] = item;
+            items[indexReplace].setId(idReplace);
+            return items[indexReplace].getId() == item.getId() ? true : false;
+        }
+        return false;
     }
 
     public boolean delete(int id) {
-        int indexDel = indexOf(id);
-        items[indexDel] = null;
-        int length = size - indexDel - 1;
-        System.arraycopy(items, indexDel, items, indexDel, length);
-        items[items.length - 1] = null;
-        return items[indexDel] != null ? true : false;
+        if (indexOf(id) != -1) {
+            int indexDel = indexOf(id);
+            items[indexDel] = null;
+            int length = size - indexDel - 1;
+            System.arraycopy(items, indexDel, items, indexDel, length);
+            items[items.length - 1] = null;
+            return items[indexDel] != null ? true : false;
+        }
+        return false;
     }
 
     public Item[] findAll() {
