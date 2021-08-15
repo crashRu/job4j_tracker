@@ -21,16 +21,7 @@ public class StartUI {
             } else {
                 run = false;
             }
-            if (select == 0) {
-                System.out.println("Введите новую задачу");
-                String item = scanner.nextLine();
-                tracker.add(new Item(item));
-            } else if (select == 1) {
-                Item[] list = tracker.findAll();
-                for (Item item1 : list) {
-                    System.out.println(item1);
-                }
-            } else if (select == 2) {
+            if (select == 2) {
                 System.out.println("Введите ид задания:");
                 int replaceId = Integer.parseInt(scanner.nextLine());
                 System.out.println("Введите новое имя дела");
