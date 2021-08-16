@@ -21,25 +21,6 @@ public class StartUI {
             } else {
                 run = false;
             }
-            if (select == 2) {
-                System.out.println("Введите ид задания:");
-                int replaceId = Integer.parseInt(scanner.nextLine());
-                System.out.println("Введите новое имя дела");
-                String replaceName = scanner.nextLine();
-                tracker.replace(replaceId, new Item(replaceName));
-            } else if (select == 3) {
-                System.out.println("Введите ид задания которое требуется удалить");
-                int delId = scanner.nextInt();
-                System.out.println(tracker.delete(delId) ? "Дело удалено" : "Ид не найден");
-            } else if (select == 4) {
-                System.out.println("Введите ид задания которое требуется найти");
-                int findId = Integer.parseInt(scanner.nextLine());
-                System.out.println(tracker.findById(findId));
-            } else if (select == 5) {
-                System.out.println("Введите имя задания которое требуется найти");
-                String findName = scanner.nextLine();
-                System.out.println(tracker.findByName(findName));
-            }
         }
     }
 
