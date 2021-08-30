@@ -12,6 +12,20 @@ public class StartUI {
             new FindNameAction()
     };
 
+    public static void main(String[] args) {
+        Input input = new ConsoleInput();
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new CreateAction(),
+                new ShowAllAction(),
+                new DeleteAction(),
+                new EditAction(),
+                new FindIdAction(),
+                new FindNameAction()
+        };
+        new StartUI().init(input, tracker, actions);
+    }
+
     public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
