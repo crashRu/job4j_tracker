@@ -8,6 +8,8 @@ public class StubInputTest {
     @Test
     public void whenAddItem() {
         Tracker tracker = new Tracker();
+        Item item = new Item(0, "Fix PC");
+        tracker.add(item);
         Item created = tracker.findAll()[0];
         Item expected = new Item("Fix PC");
         assertThat(created.getName(), is(expected.getName()));
