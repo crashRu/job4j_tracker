@@ -3,29 +3,6 @@ package ru.job4j.tracker;
 import ru.job4j.tracker.core.*;
 
 public class StartUI {
-    UserAction[] actions = {
-            new CreateAction(),
-            new ShowAllAction(),
-            new DeleteAction(),
-            new EditAction(),
-            new FindIdAction(),
-            new FindNameAction()
-    };
-
-    public static void main(String[] args) {
-        Input input = new ConsoleInput();
-        Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                new CreateAction(),
-                new ShowAllAction(),
-                new DeleteAction(),
-                new EditAction(),
-                new FindIdAction(),
-                new FindNameAction()
-        };
-        new StartUI().init(input, tracker, actions);
-    }
-
     public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
@@ -42,4 +19,19 @@ public class StartUI {
             System.out.println(index + ". " + actions[index].name());
         }
     }
+
+    public static void main(String[] args) {
+        Input input = new ConsoleInput();
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new CreateAction(),
+                new ShowAllAction(),
+                new DeleteAction(),
+                new EditAction(),
+                new FindIdAction(),
+                new FindNameAction()
+        };
+        new StartUI().init(input, tracker, actions);
+    }
+
 }
