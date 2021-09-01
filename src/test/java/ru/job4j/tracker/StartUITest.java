@@ -50,7 +50,7 @@ public class StartUITest {
                 new String[] {"0", String.valueOf(item.getId()), replacedName, "1"}
         );
         UserAction[] actions = {
-                new EditAction(),
+                new EditAction(new StubOutput()),
                 new ExitAction()
         };
         new StartUI(new ConsoleOutput()).init(in, tracker, actions);
@@ -65,7 +65,7 @@ public class StartUITest {
                 new String[] {"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
-                new DeleteAction(),
+                new DeleteAction(new StubOutput()),
                 new ExitAction()
         };
         new StartUI(new ConsoleOutput()).init(in, tracker, actions);
