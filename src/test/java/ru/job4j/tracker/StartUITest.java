@@ -27,10 +27,110 @@ public class StartUITest {
     }
 
     @Test
+    public void whenFindAllAction(){
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[]{"0", "first item", "0", "second item", "1", "2"});
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new CreateAction(out),
+                new ShowAllAction(out),
+                new ExitAction()
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is("Menu." + System.lineSeparator() +
+                "0. Add new Item" + System.lineSeparator() +
+                "1. === Show all items ====" + System.lineSeparator() +
+                "2. ExitAction" + System.lineSeparator() +
+                "=== Create a new Item ====" + System.lineSeparator() +
+                "Добавлена заявка: " + tracker.findById(1).toString() + System.lineSeparator() +
+                "Menu." + System.lineSeparator() +
+                "0. Add new Item" + System.lineSeparator() +
+                "1. === Show all items ====" + System.lineSeparator() +
+                "2. ExitAction" + System.lineSeparator() +
+                "=== Create a new Item ====" + System.lineSeparator() +
+                "Добавлена заявка: " + tracker.findById(2).toString() + System.lineSeparator() +
+                "Menu." + System.lineSeparator() +
+                "0. Add new Item" + System.lineSeparator() +
+                "1. === Show all items ====" + System.lineSeparator() +
+                "2. ExitAction" + System.lineSeparator() +
+                tracker.findById(1).toString() + System.lineSeparator() +
+                tracker.findById(2).toString() + System.lineSeparator() +
+                "Menu." + System.lineSeparator() +
+                "0. Add new Item" + System.lineSeparator() +
+                "1. === Show all items ====" + System.lineSeparator() +
+                "2. ExitAction" + System.lineSeparator()
+        ));
+    }
+
+    @Test
+    public void whenFindNameAction() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[]{"0", "first item", "1", "first item", "2"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new CreateAction(out),
+                new FindNameAction(out),
+                new ExitAction()
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(),
+                is("Menu." + System.lineSeparator() +
+                        "0. Add new Item" + System.lineSeparator() +
+                        "1. === Find items by name ====" + System.lineSeparator() +
+                        "2. ExitAction" + System.lineSeparator() +
+                        "=== Create a new Item ====" + System.lineSeparator() +
+                        "Добавлена заявка: " + tracker.findById(1).toString() + System.lineSeparator() +
+                        "Menu." + System.lineSeparator() +
+                        "0. Add new Item" + System.lineSeparator() +
+                        "1. === Find items by name ====" + System.lineSeparator() +
+                        "2. ExitAction" + System.lineSeparator() +
+                        "Enter name: " + System.lineSeparator() +
+                        tracker.findById(1).toString() + System.lineSeparator() +
+                        "Menu." + System.lineSeparator() +
+                        "0. Add new Item" + System.lineSeparator() +
+                        "1. === Find items by name ====" + System.lineSeparator() +
+                        "2. ExitAction" + System.lineSeparator()));
+    }
+
+    @Test
+    public void whenFindIdAction() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[]{"0", "first item", "1", "1", "2"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new CreateAction(out),
+                new FindIdAction(out),
+                new ExitAction()
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(),
+                is("Menu." + System.lineSeparator() +
+                        "0. Add new Item" + System.lineSeparator() +
+                        "1. === Find item by id ====" + System.lineSeparator() +
+                        "2. ExitAction" + System.lineSeparator() +
+                        "=== Create a new Item ====" + System.lineSeparator() +
+                        "Добавлена заявка: " + tracker.findById(1).toString() + System.lineSeparator() +
+                        "Menu." + System.lineSeparator() +
+                        "0. Add new Item" + System.lineSeparator() +
+                        "1. === Find item by id ====" + System.lineSeparator() +
+                        "2. ExitAction" + System.lineSeparator() +
+                        tracker.findById(1).toString() + System.lineSeparator() +
+                        "Menu." + System.lineSeparator() +
+                        "0. Add new Item" + System.lineSeparator() +
+                        "1. === Find item by id ====" + System.lineSeparator() +
+                        "2. ExitAction" + System.lineSeparator()));
+    }
+
+    @Test
     public void whenCreateItem() {
         Output out = new ConsoleOutput();
         Input in = new StubInput(
-                new String[] {"0", "Item name", "1"}
+                new String[]{"0", "Item name", "1"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
