@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 import java.util.Scanner;
 
 public class ConsoleInput implements Input {
+    int[] ar = new int[10];
     private final Output out;
     private final Scanner scanner = new Scanner(System.in);
 
