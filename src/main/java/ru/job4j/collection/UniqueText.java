@@ -17,6 +17,7 @@ public class UniqueText {
 
         System.out.println(isEquals(origin2, text2));
     }
+
     public static boolean isEquals(String originText, String duplicateText) {
         boolean rsl = true;
         String[] origin = originText.split(" ");

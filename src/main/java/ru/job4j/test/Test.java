@@ -5,20 +5,20 @@ public class Test {
         int a = 2;
         int n = 2;
         int b = 1;
-        for(int index = 0; index < n; index++){
+        for (int index = 0; index < n; index++) {
             b = b * a;
         }
         System.out.println(b);
     }
 
         public static String check(String left, String s) {
-            if (s.isEmpty() ){
+            if (s.isEmpty()) {
                 return "empty";
-            } else if (s.length() > 0 && s.length() < 4){
+            } else if (s.length() > 0 && s.length() < 4) {
                 return s;
         }
             StringBuffer sb = new StringBuffer(s);
-            for(int index = 0; index < s.length() - 4; index++){
+            for (int index = 0; index < s.length() - 4; index++) {
                 sb.setCharAt(index, '#');
             }
             return sb.toString();

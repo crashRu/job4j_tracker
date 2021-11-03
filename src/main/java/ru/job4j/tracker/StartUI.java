@@ -32,6 +32,7 @@ public class StartUI {
             out.println(index + ". " + actions.get(index).name());
         }
     }
+
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput(output));

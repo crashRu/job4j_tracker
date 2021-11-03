@@ -1,4 +1,4 @@
-package ru.job4j.collection.listOfMap;
+package ru.job4j.collection.litofmap;
 
 import java.util.HashMap;
 import java.util.List;
