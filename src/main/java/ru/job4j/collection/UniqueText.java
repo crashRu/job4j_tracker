@@ -25,8 +25,11 @@ public class UniqueText {
         HashSet<String> check = new HashSet<>();
         check.addAll(List.of(origin));
         for (String s : text) {
-            rsl = check.contains(s);
+            if (!check.contains(s)) {
+                rsl = false;
+                break;
             }
+        }
         return rsl;
     }
 }
