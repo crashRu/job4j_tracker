@@ -6,17 +6,12 @@ public class BankService {
     private final Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        for (User us : users.keySet()) {
-            if (us.getPassport().equals(user.getPassport())) {
-                break;
-            }
-        }
-        users.put(user, new ArrayList<>());
+        users.putIfAbsent(user, new ArrayList<>());
     }
 
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
-        if (user != null) {
+        if (user != null && !users.containsKey(user.getPassport())) {
             users.get(user).add(account);
         }
     }
