@@ -60,7 +60,6 @@ public class Item {
         return Objects.hash(id, name);
     }
 
-
     @Override
     public String toString() {
         return "Item{"
