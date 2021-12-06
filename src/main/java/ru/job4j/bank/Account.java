@@ -2,6 +2,12 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ *  The class contains information about
+ *  the balance and details of the user
+ * @author Kirill Antokhii
+ * @version 8.2.6
+ */
 public class Account {
     private String requisite;
     private double balance;
