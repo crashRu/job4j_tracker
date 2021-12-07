@@ -58,8 +58,8 @@ public class JobTest {
         rsl.add(new Job("Погода", 1));
         Collections.sort(rsl, new JobDescByName());
         List<Job> extend = new ArrayList<>();
-        extend.add(new Job("погода", 1));
         extend.add(new Job("Реставрация", 2));
+        extend.add(new Job("Погода", 1));
         assertThat(rsl, is(extend));
     }
 
