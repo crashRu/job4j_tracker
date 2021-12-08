@@ -25,7 +25,7 @@ public class StringCompareTest {
                 "Ivanov",
                 "Ivanova"
         );
-        assertThat(rst, greaterThan(0));
+        assertThat(rst, lessThan(0));
     }
 
     @Test
@@ -45,7 +45,7 @@ public class StringCompareTest {
                 "Petrov",
                 "Patrov"
         );
-        assertThat(rst, lessThan(0));
+        assertThat(rst, greaterThan(0));
     }
 
     @Test
