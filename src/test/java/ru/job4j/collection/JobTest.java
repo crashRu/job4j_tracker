@@ -30,80 +30,80 @@ public class JobTest {
     @Test
     public void whenCompatorAscByName() {
         List<Job> rsl = new ArrayList<>();
-        rsl.add(new Job("Тестирование 2", 1));
-        rsl.add(new Job("Тестирование 1", 2));
+        rsl.add(new Job("Fix bug", 2));
+        rsl.add(new Job("Impl task", 1));
         Collections.sort(rsl, new JobAscByName());
         List<Job> extend = new ArrayList<>();
-        extend.add(new Job("Тестирование 1", 2));
-        extend.add(new Job("Тестирование 2", 1));
+        extend.add(new Job("Fix bug", 2));
+        extend.add(new Job("Impl task", 1));
         assertThat(rsl, is(extend));
     }
 
     @Test
     public void whenCompatorAscByPriprity() {
         List<Job> rsl = new ArrayList<>();
-        rsl.add(new Job("Реставрация", 2));
-        rsl.add(new Job("Погода", 1));
+        rsl.add(new Job("Fix bug", 2));
+        rsl.add(new Job("Impl task", 1));
         Collections.sort(rsl, new JobAscByPriority());
         List<Job> extend = new ArrayList<>();
-        extend.add(new Job("Погода", 1));
-        extend.add(new Job("Реставрация", 2));
+        extend.add(new Job("Impl task", 1));
+        extend.add(new Job("Fix bug", 2));
         assertThat(rsl, is(extend));
     }
 
     @Test
     public void whenCompatorDescByName() {
         List<Job> rsl = new ArrayList<>();
-        rsl.add(new Job("Реставрация", 2));
-        rsl.add(new Job("Погода", 1));
+        rsl.add(new Job("Impl task", 2));
+        rsl.add(new Job("Fix bug", 1));
         Collections.sort(rsl, new JobDescByName());
         List<Job> extend = new ArrayList<>();
-        extend.add(new Job("Реставрация", 2));
-        extend.add(new Job("Погода", 1));
+        extend.add(new Job("Impl task", 2));
+        extend.add(new Job("Fix bug", 1));
         assertThat(rsl, is(extend));
     }
 
     @Test
     public void whenCompatorDescByPriprity() {
         List<Job> rsl = new ArrayList<>();
-        rsl.add(new Job("Реставрация", 1));
-        rsl.add(new Job("Погода", 2));
+        rsl.add(new Job("Fix bug", 1));
+        rsl.add(new Job("Impl task", 2));
         Collections.sort(rsl, new JobDescByPriority());
         List<Job> extend = new ArrayList<>();
-        extend.add(new Job("Погода", 2));
-        extend.add(new Job("Реставрация", 1));
+        extend.add(new Job("Impl task", 2));
+        extend.add(new Job("Fix bug", 1));
         assertThat(rsl, is(extend));
     }
 
     @Test
     public void whenComparatorAscByNameAndPriority() {
         List<Job> rsl = new ArrayList<>();
-        rsl.add(new Job("Кирилл", 1));
-        rsl.add(new Job("Василий", 8));
-        rsl.add(new Job("Сергей", 4));
-        rsl.add(new Job("Михаил", 2));
+        rsl.add(new Job("Impl task", 1));
+        rsl.add(new Job("Push", 8));
+        rsl.add(new Job("Commit", 4));
+        rsl.add(new Job("Fix bug", 2));
         Collections.sort(rsl, new JobAscByName().thenComparing(new JobAscByPriority()));
         List<Job> extend = new ArrayList<>();
-        extend.add(new Job("Василий", 8));
-        extend.add(new Job("Кирилл", 1));
-        extend.add(new Job("Михаил", 2));
-        extend.add(new Job("Сергей", 4));
+        extend.add(new Job("Commit", 4));
+        extend.add(new Job("Fix bug", 2));
+        extend.add(new Job("Impl task", 1));
+        extend.add(new Job("Push", 8));
         assertThat(rsl, is(extend));
     }
 
     @Test
     public void whenComparatorDescByNameAndDescPriority() {
         List<Job> rsl = new ArrayList<>();
-        rsl.add(new Job("Кирилл", 1));
-        rsl.add(new Job("Сергей", 8));
-        rsl.add(new Job("Василий", 4));
-        rsl.add(new Job("Михаил", 2));
+        rsl.add(new Job("Impl task", 1));
+        rsl.add(new Job("Push", 8));
+        rsl.add(new Job("Commit", 4));
+        rsl.add(new Job("Fix bug", 2));
         Collections.sort(rsl, new JobDescByName().thenComparing(new JobDescByPriority()));
         List<Job> extend = new ArrayList<>();
-        extend.add(new Job("Сергей", 8));
-        extend.add(new Job("Михаил", 2));
-        extend.add(new Job("Кирилл", 1));
-        extend.add(new Job("Василий", 4));
+        extend.add(new Job("Push", 8));
+        extend.add(new Job("Impl task", 1));
+        extend.add(new Job("Fix bug", 2));
+        extend.add(new Job("Commit", 4));
         assertThat(rsl, is(extend));
     }
 }
