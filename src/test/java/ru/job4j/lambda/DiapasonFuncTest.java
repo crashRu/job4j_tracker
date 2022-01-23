@@ -31,5 +31,4 @@ public class DiapasonFuncTest {
         List<Double> expected = Arrays.asList(65D, 129D, 257D);
         assertThat(result, is(expected));
     }
-
 }
