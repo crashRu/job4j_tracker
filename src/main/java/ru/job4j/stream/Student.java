@@ -1,7 +1,5 @@
 package ru.job4j.stream;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
 public class Student {
@@ -9,9 +7,17 @@ public class Student {
 
     private String surname;
 
-    public Student(int score, String surname) {
-        this.score = score;
+    public Student(String surname) {
         this.surname = surname;
+    }
+
+    public Student(int score, String surname) {
+        this(surname);
+        this.score = score;
+    }
+
+    public Student(String surname, int score) {
+        this(score, surname);
     }
 
     public int getScore() {
