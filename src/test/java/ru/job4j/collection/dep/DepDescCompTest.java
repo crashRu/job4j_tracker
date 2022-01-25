@@ -17,7 +17,6 @@ public class DepDescCompTest {
         assertThat(rsl, greaterThan(0));
     }
 
-    @Ignore
     @Test
     public void whenUpDepartmentGoBefore() {
         int rsl = new DepDescComp().compare(
