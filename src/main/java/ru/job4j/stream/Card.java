@@ -1,7 +1,5 @@
 package ru.job4j.stream;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 enum Suit {
@@ -21,20 +19,10 @@ public class Card {
         this.value = value;
     }
 
-    @Override
-    public String toString() {
-        return "Card{"
-                + "suit=" + suit
-                + ", value=" + value
-                + '}';
-    }
-
     public static void main(String[] args) {
-       List<Card> list = Stream.of(Suit.values())
+        Stream.of(Suit.values())
                 .flatMap(val -> Stream.of(Value.values())
-                        .map(suit1 -> new Card(val, suit1)))
-                .collect(Collectors.toList());
-
-       list.stream().forEach(System.out::println);
+                        .map(value1 -> val + " " + value1))
+                .forEach(System.out::println);
     }
 }
