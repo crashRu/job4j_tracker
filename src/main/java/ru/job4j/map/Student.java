@@ -1,12 +1,9 @@
 package ru.job4j.map;
-
-import java.util.Objects;
+import java.util.*;
 
 public class Student {
     private String name;
-
     private String account;
-
     private String group;
 
     public Student(String name, String account, String group) {
